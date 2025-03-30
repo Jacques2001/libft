@@ -18,11 +18,11 @@ char *ft_strjoin(char const *s1, char const *s2)
 	str[x] = '\0';
 	return str;
 }
-
+/*
 int main()
 {
 	char s1[] = "Hello";
-	char s2[] = "Jacques";
+	char s2[] = "World 42";
 	printf("%s\n", ft_strjoin(s1, s2));
 	return 0;
-}
+}*/
