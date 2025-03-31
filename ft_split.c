@@ -100,7 +100,7 @@ void print_split(char **split)
 	print_split(ft_split(str, c));
 	return 0;
 }*/
-
+/*
 int main()
 {
 	char c = ' ';
@@ -132,4 +132,4 @@ int main()
 		}
   }
   return 0;
-}
+}*/
