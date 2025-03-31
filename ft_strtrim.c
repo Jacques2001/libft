@@ -31,6 +31,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	(void)ac;
 	char str[] = "oxoJaccquesooxxoooo";
 	char set[] = "xo";
-	printf("%s\n", ft_strtrim(av[1], av[2]));
+	printf("%s\n", ft_strtrim(str, set));
 	return 0;
 }*/
