@@ -81,7 +81,7 @@ char **ft_split(char const *s, char c)
 	return split;
 }
 
-void print_split(char **split)
+/*void print_split(char **split)
 {
   int i;
   i = 0;
@@ -92,7 +92,7 @@ void print_split(char **split)
   }
 }
 
-/*int main()
+int main()
 {
 	char str[] = "1 1 1  1 1  1  1 1 1 1 1  2  2  2 2 2 2";
 	char c = ' ';
