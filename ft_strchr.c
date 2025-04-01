@@ -1,29 +1,26 @@
 #include "libft.h"
 char *ft_strchr(const char *s, int c)
 {
-	char *str;
 	int i;
+
 	i = 0;
-	str = (char *)s;
-	while(str[i])
+	while(s[i])
 	{
-		if(str[i] == c)
-			return &str[i];
+		if(s[i] == (char)c)
+			return (char*)&s[i];
 		i++;
 	}
-	if(str[i] == c)
-		return &str[i];
+	if(s[i] == (char)c)
+		return (char*)&s[i];
 	return (NULL);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
+
+/*int main()
 {
-	char str[] = "Hello Jacques";
-	char c = 'a';
-	char *resultat = ft_strchr(str, c);
+	char str[] = "tripouille";
+	char c = 't';
+	char *resultat = ft_strchr(str, c + 256);
 	printf("%s\n", resultat);
-	printf("%s\n", strchr(str, c));
+	printf("%s\n", strchr(str, c + 256));
 	return 0;
 }*/
