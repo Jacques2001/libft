@@ -12,7 +12,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while(len > 0)
 		{
-			d[len] = s[len];
+			d[len - 1] = s[len - 1];
 			len--;
 		}
 	}
@@ -26,3 +26,11 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return dst;
 }
+
+/*int main()
+{
+	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
+	printf("%s\n", ft_memmove(sResult + 1, sResult, 2));
+	printf("%s\n", memmove(sResult + 1, sResult, 2));
+	return 0;
+}*/

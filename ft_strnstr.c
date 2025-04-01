@@ -13,25 +13,23 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		k = 0;
 		start = i;
-		while(haystack[i] == needle[k] && i < len)
+		while(haystack[start] == needle[k] && start < len)
 		{
-			i++;
+			start++;
 			k++;
 			if(needle[k] == '\0')
-				return (char *)&haystack[start];
+				return (char *)&haystack[i];
 		}
 		i++;
 	}
 	return NULL;
 }
 
-#include <stdio.h>
-#include <string.h>
-int main()
+/*int main()
 {
-	char hay[] = "Hello Jacques";
-	char needle[] = "Ja";
-	printf("%s\n", ft_strnstr(hay, needle, 7));
-	printf("%s\n", strnstr(hay, needle, 7));
+	char hay[] = "aaabcabcd";
+	char needle[] = "cd";
+	printf("%s\n", ft_strnstr(hay, needle, 8));
+	printf("%s\n", strnstr(hay, needle, 8));
 	return 0;
-}
+}*/

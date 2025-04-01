@@ -5,21 +5,30 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	char *str;
 
 	i = 0;
+	if(start >= ft_strlen(s))
+	{
+		str = malloc(1 * sizeof(char));
+		if(str == NULL)
+			return NULL;
+		str[0] = '\0';
+		return str;	
+	}
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	str = malloc((len + 1) * sizeof(char));
 	if(str == NULL)
 		return NULL;
-	while(s[start])
+	while(s[i] && i < len)
 	{
-		str[i] = s[start];
-		start++;
+		str[i] = s[start + i];
 		i++;
 	}
 	str[i] = '\0';
 	return str;
 }
-/*
-int main()
+
+/*int main()
 {
-	char str[] = "Hello Jacques";
-	printf("%s\n", ft_substr(str, 6, 7));
+	char str[] = "tripouille";
+	printf("%s\n", ft_substr(str, 100, 1));
 }*/
