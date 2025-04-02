@@ -3,26 +3,32 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
 	size_t k;
+	size_t dst_len;
+	size_t src_len;
 
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
 	k = 0;
 	i = ft_strlen(dst);
-	while (src[k] && i < dstsize - 1)
+	if(dstsize == 0)
+		return src_len;
+	if(dst_len >= dstsize)
+		return src_len + dstsize;
+	while (src[k] && k < dstsize - 1 - dst_len)
 	{
 		dst[i] = src[k];
 		i++;
 		k++;
 	}
 	dst[i] = '\0';
-	return ft_strlen(dst) + ft_strlen(src);
+	return dst_len + src_len;
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main()
+
+/*int main()
 {
-	char src[] = "Hello Jacques how are you im fine thank you euhhhhhh";
-	char dst[60] = "Hop";
-	printf("%lu\n", strlcat(dst, src, 20));
-	printf("%zu\n", ft_strlcat(dst, src, 20));
+	char src[] = "AAAAAAAAA";
+	char dst[30] = {0};
+	printf("%lu\n", strlcat(dst, src, 6));
+	printf("%zu\n", ft_strlcat(dst, src, 6));
 	return 0;
 }*/

@@ -13,7 +13,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while(ft_strchr(set, s1[end]) != NULL && end >= 0)
 		end--;
-	str = malloc(end - start + 1 * sizeof(char));
+	if(start > end)
+		return ft_strdup("");
+	str = malloc((end - start + 1) * sizeof(char));
 	if(str == NULL)
 		return NULL;
 	while(start <= end)
@@ -29,8 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*int main(int ac, char **av)
 {
 	(void)ac;
-	char str[] = "oxoJaccquesooxxoooo";
-	char set[] = "xo";
-	printf("%s\n", ft_strtrim(str, set));
+	char str[] = "   xxx   xxx";
+	char set[] = "x";
+	printf("%s\n", ft_strtrim(str, ""));
 	return 0;
 }*/
