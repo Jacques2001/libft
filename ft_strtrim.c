@@ -9,13 +9,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	while(ft_strchr(set, s1[start]) != NULL && start <= end)
+	while(start <= end && ft_strchr(set, s1[start]))
 		start++;
-	while(ft_strchr(set, s1[end]) != NULL && end >= 0)
+	while(end >= start && ft_strchr(set, s1[end]))
 		end--;
 	if(start > end)
 		return ft_strdup("");
-	str = malloc((end - start + 1) * sizeof(char));
+	str = malloc((end - start + 2) * sizeof(char));
 	if(str == NULL)
 		return NULL;
 	while(start <= end)
@@ -28,11 +28,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return str;
 }
 
-/*int main(int ac, char **av)
-{
-	(void)ac;
-	char str[] = "   xxx   xxx";
-	char set[] = "x";
-	printf("%s\n", ft_strtrim(str, ""));
-	return 0;
-}*/
+// int main(int ac, char **av)
+// {
+// 	(void)ac;
+// 	char str[] = "lorem ipsum dolor sit amet";
+// 	char set[] = "te";
+// 	printf("%s\n", ft_strtrim(str, ""));
+// 	return 0;
+// }

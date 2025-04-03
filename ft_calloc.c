@@ -5,7 +5,7 @@ void *ft_calloc(size_t count, size_t size)
 
 	if (count != 0 && size > SIZE_MAX / count)
 		return NULL;
-	if(count == -2147483648 || count == 2147483647)
+	if(count == (size_t)-2147483648 || count == (size_t)2147483647)
 		return NULL;
 	tab = malloc(count * size);
 	if(tab == NULL)

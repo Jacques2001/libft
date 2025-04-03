@@ -14,17 +14,17 @@ void *ft_memchr(const void *s, int c, size_t n)
 			return &str[i];
 		i++;
 	}
-	if(str[i] == c)
+	if(str[i] == c && i < n)
 		return &str[i];
 	return (NULL);
 }
 
 /*int main()
 {
-	char str[] = {0, 1, 2 ,3 ,4 ,5};
-	char c = 0;
-	char *resultat = ft_memchr(str, c, 0);
+	char str[] = "bonjourno";
+	char c = 'n';
+	char *resultat = ft_memchr(str, c, 2);
 	printf("%s\n", resultat);
-	printf("%s\n", memchr(str, c, 0));
+	printf("%s\n", memchr(str, c, 2));
 	return 0;
 }*/

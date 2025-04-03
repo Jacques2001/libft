@@ -9,7 +9,7 @@ int count_word(char const *str, char c)
 	count = 0;
 	while(str[i])
 	{
-		if((str[i] != c && str[i - 1] == c) || (i == 0 && str[i] != c))
+		if( (i == 0 && str[i] != c) || (str[i] != c && str[i - 1] == c))
 			count++;
 		i++;
 	}
@@ -40,7 +40,7 @@ void fill_split(char **split, char const *str, char c)
 	y = 0;
 	while(str[y])
 	{
-		if((str[y] != c && str[y - 1] == c) || (y == 0 && str[y] != c))
+		if((y == 0 && str[y] != c) || (str[y] != c && str[y - 1] == c))
 		{
 			while(str[y] != c && str[y])
 				split[i][x++] = str[y++];
@@ -67,7 +67,7 @@ char **ft_split(char const *s, char c)
 		return NULL;
 	while(s[x])
 	{
-		if((s[x] != c && s[x - 1] == c) || (x == 0 && s[x] != c))
+		if((x == 0 && s[x] != c) || (s[x] != c && s[x - 1] == c))
 		{
 			split[i] = malloc((count_letter(s, c, x) + 1) * sizeof(char));
 			if(split[i] == NULL)
@@ -77,59 +77,59 @@ char **ft_split(char const *s, char c)
 		x++;
 	}
 	fill_split(split, s, c);
-	split[i] = NULL;
 	return split;
 }
 
-/*void print_split(char **split)
-{
-  int i;
-  i = 0;
-  while(split[i])
-  {
-    printf("%s\n", split[i]);
-    i++;
-  }
-}
+// void print_split(char **split)
+// {
+//   int i;
+//   i = 0;
+//   while(split[i])
+//   {
+//     printf("%s\n", split[i]);
+//     i++;
+//   }
+// }
 
-int main()
-{
-	char str[] = "1 1 1  1 1  1  1 1 1 1 1  2  2  2 2 2 2";
-	char c = ' ';
-	//printf("%d\n", count_word(str, c));
-	print_split(ft_split(str, c));
-	return 0;
-}*/
-/*
-int main()
-{
-	char c = ' ';
-  char *array[] = {
-  ",Hello",
-  "Hello                    ",
-  "                hello              ",
-  "1 1 1 1 1 1 1  1 1  1 1 1 1  1 1  1 1 1 2",
-  "                                   !,,,,,,,,,,,",
-  "",
-  "Hello",
-  "Hello, World ! 42 ?",
-  "               Jacques  est  super fort   !!!! ",
-  NULL
-  };
-  for(int i = 0; array[i] != NULL;i++ )
-  {
-    printf("============= TEST %d =================\n",i);
-    printf("string: [%s]\n",array[i]);
+// int main()
+// {
+// 	char str[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
+// 	char c = ' ';
+// 	// printf("%d\n", count_word(str, c));
+// 	print_split(ft_split(str, c));
+// 	return 0;
+// }
+
+// int main()
+// {
+// 	char c = ' ';
+//   char *array[] = {
+//   ",Hello",
+//   "Hello                    ",
+//   "                hello              ",
+//   "1 1 1 1 1 1 1  1 1  1 1 1 1  1 1  1 1 1 2",
+//   "                                   !,,,,,,,,,,,",
+//   "",
+//   "Hello",
+//   "Hello, World ! 42 ?",
+//   "               Jacques  est  super fort   !!!! ",
+// 	"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse",
+//   NULL
+//   };
+//   for(int i = 0; array[i] != NULL;i++ )
+//   {
+//     printf("============= TEST %d =================\n",i);
+//     printf("string: [%s]\n",array[i]);
     
-    char **tab;
-    tab = ft_split(array[i], c);
-    printf("\nft_split:\n");
-		int k = 0;
-		while(tab[k] != NULL)
-		{
-			printf("tab[%d] = {%s}\n",k, tab[k]);
-			k++;
-		}
-  }
-  return 0;
-}*/
+//     char **tab;
+//     tab = ft_split(array[i], c);
+//     printf("\nft_split:\n");
+// 		int k = 0;
+// 		while(tab[k] != NULL)
+// 		{
+// 			printf("tab[%d] = {%s}\n",k, tab[k]);
+// 			k++;
+// 		}
+//   }
+//   return 0;
+// }

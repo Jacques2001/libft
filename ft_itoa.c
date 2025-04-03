@@ -4,6 +4,8 @@ int count_nb(int nb)
   int i;
 
   i = 0;
+	if(nb == 0)
+		return 1;
   if(nb == -2147483648)
     return 11;
   if(nb < 0)
@@ -35,7 +37,7 @@ void fill_str(int nbr, char *itoa, int *i)
     itoa[(*i)] = '-';
     (*i)++;
   }
-  if(nbr > 10)
+  if(nbr >= 10)
   {
     fill_str(nbr / 10, itoa, i);
     fill_str(nbr % 10, itoa, i);
@@ -60,12 +62,12 @@ char *ft_itoa(int nbr)
   itoa[i] = '\0';
   return itoa;
 }
-/*
-int main()
-{
-  int nb;
-  nb =  -2147483648;
-//  printf("le total de chiffre est ; %d\n", count_nb(nb));
-  printf("%s\n", ft_itoa(nb));
-  return 0;
-}*/
+
+// int main()
+// {
+//   int nb;
+//   nb = 10;
+// 	//printf("le total de chiffre est ; %d\n", count_nb(nb));
+//   printf("%s\n", ft_itoa(nb));
+//   return 0;
+// }
