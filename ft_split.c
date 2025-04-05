@@ -80,26 +80,6 @@ char **ft_split(char const *s, char c)
 	return split;
 }
 
-// void print_split(char **split)
-// {
-//   int i;
-//   i = 0;
-//   while(split[i])
-//   {
-//     printf("%s\n", split[i]);
-//     i++;
-//   }
-// }
-
-// int main()
-// {
-// 	char str[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
-// 	char c = ' ';
-// 	// printf("%d\n", count_word(str, c));
-// 	print_split(ft_split(str, c));
-// 	return 0;
-// }
-
 // int main()
 // {
 // 	char c = ' ';
